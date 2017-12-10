@@ -1,4 +1,9 @@
 language: python
 dist: trusty
+sudo: required
+before_install:
+  - sudo apt-get -qq update
+  - sudo apt-get install python-requests python3-requests
+
 script:
   - python dos.py
