@@ -27,8 +27,8 @@ t = []
 
 for y in range(1, 10):
 	for i in range(1,1000):
-		#x = Thread(target=execx)
-		x = Thread(target=httpDos)
+		x = Thread(target=execx)
+		#x = Thread(target=httpDos)
 		t.append(x)
 		x.start()
 	for x in t:
