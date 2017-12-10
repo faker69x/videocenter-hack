@@ -8,7 +8,7 @@ def execx():
 t = []
 
 while True:
-    for i in range(1,10000):
+    for i in range(1,1000):
         x = Thread(target=execx)
         t.append(x)
         x.start()
