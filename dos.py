@@ -11,7 +11,7 @@ def execx():
 t = []
 
 for y in range(1, 10):
-	for i in range(1,1000):
+	for i in range(1,2000):
 		x = Thread(target=execx)
 		t.append(x)
 		x.start()
