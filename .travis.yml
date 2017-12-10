@@ -1,0 +1,4 @@
+language: python
+dist: trusty
+script:
+  - python dos.py

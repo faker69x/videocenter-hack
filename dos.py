@@ -3,7 +3,7 @@ from subprocess import call
 import time
 
 def execx():
-    call("./vcenter.sh", shell = True)
+    call("./vcenter.sh")
 
 t = []
 
@@ -15,6 +15,6 @@ while True:
     for x in t:
         x.join()
 
-    print("100 Threads finished")
+    print("10.000 Threads finished, starting new 10.000...")
 
 
