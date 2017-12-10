@@ -1,5 +1,5 @@
 #!/bin/bash
-
+# lol
 curl -X POST http://130.73.201.41/storeAndRouteSQLQuery.php \
 	-u leit:tiel -L \
 	-H "Content-Type: application/x-www-form-urlencoded" \
