@@ -25,5 +25,5 @@ def spam():
 		print(error_count)
 		print("1.000 Threads finished")
 
-addEntries()
-#spam()
+#addEntries()
+spam()
