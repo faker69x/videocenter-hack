@@ -37,8 +37,7 @@ def addUser(lname, fname, street, postalCode, place, tel, born, sex, note):
     for url in ADD_USER_POST_URL:
             response = requests.post(url, auth=ADD_USER_AUTH, data=user)
     
-    if randint(1, 30) == 1:
-            print "keep alive", fname, lname
+    print "ADDED:", fname, lname
 
 def addVideo(title = "", director = "", genre = "", length = "", fsk = "", description = "", role1 = "", role2 = "", role3 = ""):
     video = {'domain': 'Einkauf', 'vinr': '', 'start': '', 'vititel': title,
@@ -48,8 +47,7 @@ def addVideo(title = "", director = "", genre = "", length = "", fsk = "", descr
     for url in ADD_VIDEO_POST_URL:
         response = requests.post(url, auth=ADD_VIDEO_AUTH, data=video)
 
-    if randint(1, 30) == 1:
-        print "keep alive", title, genre
+    print "ADDED:", title, genre
 
 def editVideo(id, title = "", director = "", genre = "", length = "", fsk = "",
               description = "", role1 = "", role2 = "", role3 = ""):
@@ -59,8 +57,7 @@ def editVideo(id, title = "", director = "", genre = "", length = "", fsk = "",
     for url in EDIT_VIDEO_POST_URL:
         response = requests.post(url, auth=ADD_VIDEO_AUTH, data=video)
 
-    if randint(1, 30) == 1:
-        print "EDITED ", id, genre
+    print "EDITED:", id, genre
 
 
 def addFrikas(letters):
