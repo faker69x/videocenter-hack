@@ -8,9 +8,7 @@ import itertools
 ADD_USER_POST_URL = ["http://videocenter2.schule.de/adduser.php?domain=Anmeldung&used_table=kunden",
 		     "http://videocenter.schule.de/adduser.php?domain=Anmeldung&used_table=kunden"]
 ADD_USER_AUTH = requests.auth.HTTPBasicAuth("anme", "emna")
-
 SQL_QUERY = "sql_abfrage=SELECT+*+FROM+kunden%2C+videos%2C+ausleihe+WHERE+ausleihe.kunr+LIKE+%27%25{}%25%27+GROUP+BY+kunden.kustras++ORDER+BY+kunden.kuort&domain=Geschaeftsfuehrung&num=0&limit=10000&submit=Query+abschicken%21"
-
 error_count = 0
 
 def execx():
@@ -40,4 +38,4 @@ def addUser(lname, fname, street, postalCode, place, tel, born, sex, note):
 def addFrikas(letters):
 	for i in range(4,5):
 		for j in map(''.join, itertools.product(letters, repeat=i)):
-			addUser("xX_DaiMuddahHD_Xx {}".format(j), "Imperator", "ne lass mal", "12345", "Poofingen an der Zichte", "666", "1933-01-31", "w", "Diese Person ist gefaehrlich, halten sie sie von Essen fern!")
+			addUser("xXDaiMuddahHDXx {}".format(j), "Imperator", "ne lass mal", "12345", "Poofingen an der Zichte", "666", "1933-01-31", "w", "Diese Person ist gefaehrlich, halten sie sie von Essen fern!")
