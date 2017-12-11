@@ -2,6 +2,7 @@ from subprocess import call
 from random import randint
 import socket
 import time
+import threading
 import requests
 import itertools
 
@@ -28,7 +29,7 @@ def printStats():
     global editUser_count
     global addVideo_count
     global editVideo_count
-    while True:
+    while getattr(threading.currentThread(), "do_run", True):
         time.sleep(5)
         print "[running]", addUser_count, "users added\t", editUser_count, "users edited\t", addVideo_count, "videos added\t", editVideo_count, "videos edited\t"
 
