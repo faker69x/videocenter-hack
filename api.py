@@ -16,6 +16,18 @@ ADD_VIDEO_AUTH = requests.auth.HTTPBasicAuth("eink", "knie")
 SQL_QUERY = "sql_abfrage=SELECT+*+FROM+kunden%2C+videos%2C+ausleihe+WHERE+ausleihe.kunr+LIKE+%27%25{}%25%27+GROUP+BY+kunden.kustras++ORDER+BY+kunden.kuort&domain=Geschaeftsfuehrung&num=0&limit=10000&submit=Query+abschicken%21"
 error_count = 0
 
+addUser_count = 0
+addVideo_count = 0
+editVideo_count = 0
+
+def printStats():
+    global addUser_count
+    global addVideo_count
+    global editVideo_count
+    while True:
+        time.sleep(5)
+        print "[running]", addUser_count, "users added\t", addVideo_count, "videos added\t", editVideo_count, "videos edited\t"
+
 def execx():
     call(["./vcenter.sh", SQL_QUERY.format(randint(0, 2000))])
 
@@ -37,7 +49,8 @@ def addUser(lname, fname, street, postalCode, place, tel, born, sex, note):
     for url in ADD_USER_POST_URL:
             response = requests.post(url, auth=ADD_USER_AUTH, data=user)
     
-    print "ADDED:", fname, lname
+    global addUser_count
+    addUser_count += 1
 
 def addVideo(title = "", director = "", genre = "", length = "", fsk = "", description = "", role1 = "", role2 = "", role3 = ""):
     video = {'domain': 'Einkauf', 'vinr': '', 'start': '', 'vititel': title,
@@ -47,7 +60,8 @@ def addVideo(title = "", director = "", genre = "", length = "", fsk = "", descr
     for url in ADD_VIDEO_POST_URL:
         response = requests.post(url, auth=ADD_VIDEO_AUTH, data=video)
 
-    print "ADDED:", title, genre
+    global addVideo_count
+    addVideo_count += 1
 
 def editVideo(id, title = "", director = "", genre = "", length = "", fsk = "",
               description = "", role1 = "", role2 = "", role3 = ""):
@@ -57,7 +71,8 @@ def editVideo(id, title = "", director = "", genre = "", length = "", fsk = "",
     for url in EDIT_VIDEO_POST_URL:
         response = requests.post(url, auth=ADD_VIDEO_AUTH, data=video)
 
-    print "EDITED:", id, genre
+    global editVideo_count
+    editVideo_count += 1
 
 
 def addFrikas(letters):

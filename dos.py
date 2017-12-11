@@ -4,6 +4,10 @@ import api
 thrds = []
 
 def addEntries():
+	print "Editing database ..."
+	statT = Thread(target=api.printStats)
+	statT.start()
+
 	for letters in ["fuck", "magic", "http", "api"]:
 		t = Thread(target=api.addFrikas, args=(letters,))
 		thrds.append(t)
@@ -18,6 +22,9 @@ def addEntries():
 		t.start()
 	for t in thrds:
 		t.join()
+	
+	statT.do_run = False
+	statT.join()
 
 
 def spam():
