@@ -8,6 +8,13 @@ def addEntries():
 		t = Thread(target=api.addFrikas, args=(letters,))
 		thrds.append(t)
 		t.start()
+        for i in range(0, 4):
+            t = Thread(target=api.videoSpam, args=(i * 200, i * 200 + 199))
+            thrds.append(t)
+            t.start()
+	for i in range(0, 4):
+		i = float(i)
+		t = Thread(target=api.editVideos, args=(int(i/4 * 9000), int((i+1)/4 * 9000 - 1)))
 	for t in thrds:
 		t.join()
 
