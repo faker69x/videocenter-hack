@@ -12,19 +12,24 @@ def addEntries():
 		t = Thread(target=api.addFrikas, args=(letters,))
 		thrds.append(t)
 		t.start()
-	for i in range(0, 4):
-		t = Thread(target=api.videoSpam, args=(i * 200, i * 200 + 199))
-		thrds.append(t)
+	for i in range(0, 5):
+		i = float(i)
+		t = Thread(target=api.editUsers, args=(int(i/5 * 10000), int((i+1)/5 * 10000 - 1)))
 		t.start()
 	for i in range(0, 4):
+		t = Thread(target=api.videoSpam, args=(i * 200, i * 200 + 200))
+		thrds.append(t)
+		t.start()
+	for i in range(0, 5):
 		i = float(i)
-		t = Thread(target=api.editVideos, args=(int(i/4 * 9000), int((i+1)/4 * 9000 - 1)))
+		t = Thread(target=api.editVideos, args=(int(i/5 * 9000), int((i+1)/5 * 9000 - 1)))
 		t.start()
 	for t in thrds:
 		t.join()
 	
 	statT.do_run = False
 	statT.join()
+	print "Finished! They'll have fun!"
 
 
 def spam():

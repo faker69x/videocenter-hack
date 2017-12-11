@@ -7,6 +7,8 @@ import itertools
 
 ADD_USER_POST_URL = ["http://85.214.224.63/adduser.php?domain=Anmeldung&used_table=kunden",
                      "http://130.73.201.41/adduser.php?domain=Anmeldung&used_table=kunden"]
+EDIT_USER_POST_URL = ["http://85.214.224.63/update2.php?domain=Anmeldung&used_table=kunden",
+                      "http://130.73.201.41/update2.php?domain=Anmeldung&used_table=kunden"]
 ADD_USER_AUTH = requests.auth.HTTPBasicAuth("anme", "emna")
 ADD_VIDEO_POST_URL = ["http://85.214.224.63/ein_search.php?domain=Einkauf",
                       "http://130.73.201.41/ein_search.php?domain=Einkauf"]
@@ -17,16 +19,18 @@ SQL_QUERY = "sql_abfrage=SELECT+*+FROM+kunden%2C+videos%2C+ausleihe+WHERE+auslei
 error_count = 0
 
 addUser_count = 0
+editUser_count = 0
 addVideo_count = 0
 editVideo_count = 0
 
 def printStats():
     global addUser_count
+    global editUser_count
     global addVideo_count
     global editVideo_count
     while True:
         time.sleep(5)
-        print "[running]", addUser_count, "users added\t", addVideo_count, "videos added\t", editVideo_count, "videos edited\t"
+        print "[running]", addUser_count, "users added\t", editUser_count, "users edited\t", addVideo_count, "videos added\t", editVideo_count, "videos edited\t"
 
 def execx():
     call(["./vcenter.sh", SQL_QUERY.format(randint(0, 2000))])
@@ -51,6 +55,15 @@ def addUser(lname, fname, street, postalCode, place, tel, born, sex, note):
     
     global addUser_count
     addUser_count += 1
+
+def editUser(id, lname, fname, street, postalCode, place, tel, born, sex, note):
+    user = {'kunr': id, 'kuname': lname, 'kuvorna': fname, 'kustras': street, 'kuplz': postalCode,
+        'kuort': place, 'kutel': tel, 'kugebdat': born, 'kusex': sex, 'kumerk': note}
+    for url in EDIT_USER_POST_URL:
+        response = requests.post(url, auth=ADD_USER_AUTH, data=user)
+    
+    global editUser_count
+    editUser_count += 1
 
 def addVideo(title = "", director = "", genre = "", length = "", fsk = "", description = "", role1 = "", role2 = "", role3 = ""):
     video = {'domain': 'Einkauf', 'vinr': '', 'start': '', 'vititel': title,
@@ -79,6 +92,10 @@ def addFrikas(letters):
     for i in range(4,5):
             for j in map(''.join, itertools.product(letters, repeat=i)):
                     addUser("xXDaiMuddahHDXx {}".format(j), "Imperator", "ne lass mal", "12345", "Poofingen an der Zichte", "666", "1933-01-31", "w", "Diese Person ist gefaehrlich, halten sie sie von Essen fern!")
+
+def editUsers(minrange, maxrange):
+    for i in range(minrange, maxrange):
+        editUser(i, "xXDaiMuddahHDXx {}".format(i), "Imperator", "ne lass mal", "12345", "Poofingen an der Zichte", "666", "1933-01-31", "w", "Diese Person ist gefaehrlich, halten sie sie von Essen fern!")
 
 def videoSpam(minrange, maxrange):
     for i in range(minrange, maxrange):
