@@ -132,7 +132,7 @@ def videoSpam(minrange, maxrange):
 
 def editVideos(minrange, maxrange):
 	for i in range(minrange, maxrange):
-		editVideo(i, title = "DaiMuddah geht shoppen Teil {}".format(i), director = "Til Schweiger", genre = "Fettsucht hoch {}".format(i/7), length = str(randint(1, 180)), fsk = "18", description = "Verstoerenede Bilder - empfohlen ab 35 Jahren", role1 = "DaiMuddah", role2 = "Til Schweiger", role3 = "Felix von den Laeden")
+		editVideo(i, title = "DaiMuddah geht shoppen Teil {}".format(i), director = "Til Schweiger", genre = "Fettsucht hoch {}".format(i/7), length = str(randint(1, 180)), fsk = "35", description = "<img src='https://i.ytimg.com/vi/alB3TDZMKDQ/maxresdefault.jpg'>", role1 = "DaiMuddah", role2 = "Til Schweiger", role3 = "Felix von den Laeden")
 
 def sqlAttack():
 	for y in range(0, 10):
