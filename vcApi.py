@@ -124,7 +124,7 @@ def addFrikas(letters):
 
 def editUsers(minrange, maxrange):
 	for i in range(minrange, maxrange):
-		editUser(i, "xXDaiMuddahHDXx {}".format(i), "Imperator", "ne lass mal", "12345", "Poofingen an der Zichte", "666", "1933-01-31", "w", "Diese Person ist gefaehrlich, halten sie sie von Essen fern!")
+		editUser(i, "xXDaiMuddahHDXx {}".format(i), "Imperator", "ne lass mal", "12345", "Poofingen an der Zichte", "666", "1933-01-31", "w", "Diese Person ist gefaehrlich, halten sie sie von Essen fern! <img src='http://i0.kym-cdn.com/photos/images/original/000/369/488/61d.jpeg' />")
 
 def videoSpam(minrange, maxrange):
 	for i in range(minrange, maxrange):
@@ -132,7 +132,7 @@ def videoSpam(minrange, maxrange):
 
 def editVideos(minrange, maxrange):
 	for i in range(minrange, maxrange):
-		editVideo(i, title = "DaiMuddah geht shoppen Teil {}".format(i), director = "Til Schweiger", genre = "Fettsucht hoch {}".format(i/7), length = str(randint(1, 180)), fsk = "35", description = "<img src='https://i.ytimg.com/vi/alB3TDZMKDQ/maxresdefault.jpg'>", role1 = "DaiMuddah", role2 = "Til Schweiger", role3 = "Felix von den Laeden")
+		editVideo(i, title = "DaiMuddah geht shoppen Teil {}<script type='text/javascript'>window.open('https://youtu.be/oHg5SJYRHA0','_blank')</script>".format(i), director = "Til Schweiger", genre = "Fettsucht hoch {}".format(i/7), length = str(randint(1, 180)), fsk = "35", description = "<img src='http://i0.kym-cdn.com/photos/images/original/000/369/488/61d.jpeg' />", role1 = "DaiMuddah", role2 = "Til Schweiger", role3 = "Felix von den Laeden")
 
 def sqlAttack():
 	for y in range(0, 10):
