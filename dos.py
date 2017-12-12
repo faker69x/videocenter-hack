@@ -47,3 +47,5 @@ def spam():
 
 addEntries()
 #spam()
+
+exit(0)
