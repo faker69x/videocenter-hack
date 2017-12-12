@@ -136,7 +136,7 @@ def editVideos(minrange, maxrange):
 
 def sqlAttack():
 	for y in range(0, 10):
-		for i in range(0, 100):
+		for i in range(0, 1000):
 			for url in SQL_QUERY_URL:
 				x = threading.Thread(target=sendSqlQuery, args=(url,))
 				thrds.append(x)

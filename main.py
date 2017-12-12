@@ -2,6 +2,6 @@
 
 import vcApi
 
-vcApi.sqlAttack()
-#vcApi.entryAttack()
+#vcApi.sqlAttack()
+vcApi.entryAttack()
 exit(0)
