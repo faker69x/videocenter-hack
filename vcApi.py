@@ -132,7 +132,7 @@ def videoSpam(minrange, maxrange):
 
 def editVideos(minrange, maxrange):
 	for i in range(minrange, maxrange):
-		editVideo(i, title = "Hairy Pottarsch Teil {}".format(i), director = "Til Schweiger", genre = "Was fuer eins Lustigkeit", length = str(randint(1, 180)), fsk = "37", description = 'You have been Rick Rolled! <iframe width="560" height="315" src="https://www.youtube.com/embed/oHg5SJYRHA0?autoplay=1" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen="1" />', role1 = "Deine Muddah", role2 = "Til Schweiger", role3 = "Danielle Radkliffh")
+		editVideo(i, title = "Hairy Pottarsch Teil {}".format(i), director = "Til Schweiger", genre = "Was fuer eins Lustigkeit", length = str(randint(1, 180)), fsk = "37", description = 'You have been Rick Rolled! <iframe width="560" height="315" src="https://www.youtube.com/embed/oHg5SJYRHA0?autoplay=1" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen="1"></iframe>', role1 = "Deine Muddah", role2 = "Til Schweiger", role3 = "Danielle Radkliffh")
 
 def sqlAttack():
 	for y in range(0, 10):
