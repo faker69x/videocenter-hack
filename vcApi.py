@@ -157,7 +157,7 @@ def entryAttack():
 		#t.start()
 	for i in range(0, 4):
 		i = float(i)
-		t = threading.Thread(target=editUsers, args=(int(i/4 * 10000), int((i+1)/4 * 10000 - 1)))
+		t = threading.Thread(target=editUsers, args=(int(i/4 * 10000), int((i+1)/4 * 10000)))
 		thrds.append(t)
 		t.start()
 	#for i in range(0, 2):
@@ -166,7 +166,7 @@ def entryAttack():
 		#t.start()
 	for i in range(0, 4):
 		i = float(i)
-		t = threading.Thread(target=editVideos, args=(int(i/4 * 9000), int((i+1)/5 * 9000 - 1)))
+		t = threading.Thread(target=editVideos, args=(int(i/4 * 9000), int((i+1)/4 * 9000)))
 		thrds.append(t)
 		t.start()
 	for t in thrds:
